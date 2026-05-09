@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        class mobile{
+            constructor(brand){
+                this.brand = brand;
+            }            
+
+            call() {
+                console.log("calling from " + this.brand);
+            }
+        }
+
+        let m1 = new mobile("samsung");
+        let m2 = new mobile("apple");
+
+        m1.call();
+        m2.call();
+
+        class student {
+            constructor(name, marks){
+                this.name = name;
+                this.marks = marks;
+            }            
+            showDetails(){
+                console.log(this.name + " scored " + this.marks);
+            }
+        }
+
+        let s1 = new student("prince", 94);
+        let s2 = new student("rahul", 85);
+
+        s1.showDetails();
+        s2.showDetails();
+
+        function person(name){
+            this.name = name;
+        }
+        person.prototype.greet = function(){
+            console.log("hello, my name is "+ this.name);
+        };
+
+        let p1 = new person("prince");
+        let p2 = new person("rahul");
+
+        p1.greet()
+        p2.greet();
+
+
+        class animal {
+            constructor(name){
+                this.name = name;
+            }
+            sound(){
+                console.log(this.name + " makes sounds");
+            }
+        }
+
+        let a1 = new animal("dog");
+        a1.sound();
+
+        function Animal(name){
+            this.name = name;
+        }
+
+        Animal.prototype.sound = function(){
+            console.log(this.name + " makes sounds");
+        };
+
+        let a2 = new Animal("cat");
+        a2.sound();
+        
+        class BankAccount{
+            constructor(accountHolder, balance){
+                this.accountHolder = accountHolder;
+                this.balance = balance;
+            }
+            deposit(amount){
+                this.balance += amount;
+                console.log(amount + " deposited");
+            }
+
+            withdraw(amount){
+                this.balance -= amount
+                console.log(amount + " withdrawn");
+            }
+
+            showBalance(){
+                console.log("Balance : " + this.balance);
+            }
+        }
+
+        let acc1 = new BankAccount("prince", 1000);
+        acc1.showBalance();
+        acc1.deposit(5000);
+        acc1.withdraw(1000);
+        acc1.showBalance();
+
+        class car {
+            constructor(company, speed){
+                this.company = company;
+                this.speed = speed;
+            }
+
+            accelerate(increase = 10){
+                this.speed += increase;
+            }
+
+            showSpeed(){
+                console.log("speed is: " + this.speed);
+            }
+        }
+
+        let c1 = new car("bmw", 150);
+        c1.showSpeed();
+        c1.accelerate(50);
+        c1.showSpeed();
+        c1.accelerate();
+        c1.showSpeed();
+
+        class user {
+            constructor(name, id){
+                this.name = name;
+                this.id = id;
+            }
+            details(){
+                console.log("name is: " + this.name + " id is: " + this.id)
+            }
+        }
+
+        let u1 = new user("prince", 101);
+
+        u1.details();
+
+        class rectangle{
+            constructor(length, width){
+                this.length = length;
+                this.width = width;
+            }
+
+            area(result){
+                result = this.length*this.width
+                console.log("area is: " + result);
+            }
+        }
+
+        let r1 = new rectangle(10, 10);
+        r1.area();
+
+        
+    </script>
+</body>
+</html>

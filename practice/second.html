@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+        class Student{
+            constructor(name, marks){
+                this.name = name;
+                this.marks = marks;
+            }
+
+            get result(){
+                return this.marks >= 40 ? "Pass" : "Fail";
+            }
+        }
+
+        let s1 = new Student("prince", 91);
+        console.log(s1.result);
+
+        class Vehicle{
+            constructor(speed = 100){
+                this.speed = speed;
+            }
+        }
+        class Car extends Vehicle{
+            constructor(speed, brand){
+                super(speed);
+                this.brand = brand;
+            }
+
+            details(){
+                console.log("brand is: " + this.brand);
+                console.log("speed is: " + this.speed);
+            }
+        }
+
+        let c1 = new Car(150, "BMW");
+        c1.details();
+
+
+        function car(company, speed){
+            this.company = company;
+            this.speed = speed;
+        }
+        car.prototype.accelerate = function(increase = 50){
+            this.speed += increase;
+        }
+        car.prototype.showSpeed = function(){
+            console.log(this.speed);
+            console.log(this.company);
+        }
+
+        let c2 = new car("BMW", 200);
+        c2.accelerate();
+        c2.showSpeed();
+        c2.accelerate(100);
+        c2.showSpeed();
+
+        
+
+    </script>
+</body>
+</html>
